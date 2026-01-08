@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amanda Dalprá | Consultoria de Consórcio Humanizada</title>
+    <meta name="description" content="Consultoria especializada em consórcio imobiliário e alavancagem patrimonial com Amanda Dalprá. Estratégias inteligentes para multiplicar seu patrimônio com segurança.">
+    <title>Amanda Dalprá | Estratégia Patrimonial & Consórcio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -18,7 +19,7 @@
                         'brand-black': '#1a1a1a',
                         'brand-gold': '#c5a059',
                         'brand-cream': '#f5f3ef',
-                        'brand-gray': '#888888'
+                        'brand-gray': '#666666'
                     },
                     fontFamily: {
                         serif: ['"Cormorant Garamond"', 'serif'],
@@ -34,6 +35,7 @@
         body {
             background-color: #f5f3ef;
             color: #1a1a1a;
+            -webkit-font-smoothing: antialiased;
         }
 
         .reveal {
@@ -49,9 +51,9 @@
 
         /* Hero Image Parallax styling */
         .hero-bg {
-            background-image: url('https://i.ibb.co/XvGtzT3/Whats-App-Image-2026-01-07-at-19-48-21.jpg'); /* Nova imagem Hero */
+            background-image: url('https://i.ibb.co/XvGtzT3/Whats-App-Image-2026-01-07-at-19-48-21.jpg'); /* Imagem Hero */
             background-attachment: fixed;
-            background-position: 50% 20%; /* Foco ajustado para cima para mostrar o rosto */
+            background-position: 50% 20%; /* Foco no rosto */
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -80,30 +82,41 @@
         }
         .marquee-content {
             display: inline-block;
-            animation: marquee 20s linear infinite;
+            animation: marquee 25s linear infinite;
         }
         @keyframes marquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
+        }
+        
+        /* Smooth Text Rendering */
+        p {
+            text-wrap: pretty;
         }
     </style>
 </head>
 <body class="font-sans antialiased overflow-x-hidden">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 transition-all duration-300 bg-brand-cream/90 backdrop-blur-md py-4" id="navbar">
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-brand-cream/95 backdrop-blur-md py-4 border-b border-brand-black/5" id="navbar">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-            <a href="#" class="font-serif text-2xl tracking-widest font-semibold uppercase">Amanda Dalprá</a>
+            <a href="#" class="font-serif text-2xl tracking-widest font-semibold uppercase text-brand-black">Amanda Dalprá</a>
             
-            <div class="hidden md:flex space-x-8 text-sm tracking-widest uppercase">
+            <div class="hidden md:flex space-x-8 text-sm tracking-widest uppercase font-medium">
                 <a href="#sobre" class="hover:text-brand-gold transition-colors">Quem Sou</a>
-                <a href="#consorcio" class="hover:text-brand-gold transition-colors">O Propósito</a>
-                <a href="#diferencial" class="hover:text-brand-gold transition-colors">Cuidado Exclusivo</a>
-                <a href="#contato" class="px-6 py-2 border border-brand-black hover:bg-brand-black hover:text-white transition-all">Fale Comigo</a>
+                <a href="#consorcio" class="hover:text-brand-gold transition-colors">Soluções</a>
+                <a href="#diferencial" class="hover:text-brand-gold transition-colors">Diferencial</a>
+                <a href="#depoimentos" class="hover:text-brand-gold transition-colors">Depoimentos</a>
+            </div>
+
+            <div class="hidden md:block">
+                <a href="http://wa.me/556999206434" target="_blank" class="px-6 py-2 border border-brand-black hover:bg-brand-black hover:text-white transition-all text-xs uppercase tracking-widest font-semibold">
+                    Fale Comigo
+                </a>
             </div>
 
             <!-- Mobile Menu Button -->
-            <button class="md:hidden text-2xl" onclick="toggleMenu()">
+            <button class="md:hidden text-2xl text-brand-black" onclick="toggleMenu()" aria-label="Abrir Menu">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
@@ -111,73 +124,95 @@
         <!-- Mobile Menu Overlay -->
         <div id="mobile-menu" class="fixed inset-0 bg-brand-cream z-40 transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center space-y-8 md:hidden">
             <button class="absolute top-6 right-6 text-3xl" onclick="toggleMenu()">&times;</button>
-            <a href="#sobre" onclick="toggleMenu()" class="font-serif text-3xl">Quem Sou</a>
-            <a href="#consorcio" onclick="toggleMenu()" class="font-serif text-3xl">O Propósito</a>
-            <a href="#diferencial" onclick="toggleMenu()" class="font-serif text-3xl">Cuidado Exclusivo</a>
-            <a href="#contato" onclick="toggleMenu()" class="text-xl border-b border-brand-black pb-1">Vamos Conversar</a>
+            <a href="#sobre" onclick="toggleMenu()" class="font-serif text-3xl hover:text-brand-gold">Quem Sou</a>
+            <a href="#consorcio" onclick="toggleMenu()" class="font-serif text-3xl hover:text-brand-gold">Soluções</a>
+            <a href="#diferencial" onclick="toggleMenu()" class="font-serif text-3xl hover:text-brand-gold">Diferencial</a>
+            <a href="#depoimentos" onclick="toggleMenu()" class="font-serif text-3xl hover:text-brand-gold">Depoimentos</a>
+            <a href="http://wa.me/556999206434" target="_blank" class="mt-4 px-8 py-3 bg-brand-black text-white uppercase tracking-widest text-sm">Agendar Conversa</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <header class="relative h-screen w-full flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 hero-bg">
-            <div class="absolute inset-0 bg-black/30"></div> <!-- Dark overlay -->
+            <div class="absolute inset-0 bg-black/40"></div> <!-- Dark overlay slightly stronger for text readability -->
         </div>
         
-        <div class="relative z-10 text-center text-white px-4 reveal">
-            <p class="text-sm md:text-base tracking-[0.3em] uppercase mb-4 text-brand-gold">Consultoria Humanizada</p>
-            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl mb-6 leading-tight">
-                Construindo <br> <span class="italic font-light">Legados</span>
+        <div class="relative z-10 text-center text-white px-4 reveal max-w-5xl mx-auto">
+            <p class="text-sm md:text-base tracking-[0.3em] uppercase mb-6 text-brand-gold font-semibold">Estratégia Patrimonial Inteligente</p>
+            
+            <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl mb-6 leading-tight">
+                Multiplique seu Patrimônio Imobiliário com <br> 
+                <span class="italic font-light text-brand-cream">Estratégia e Consórcio</span>
             </h1>
-            <p class="font-light text-lg md:text-xl max-w-2xl mx-auto mb-10 text-gray-200">
-                Mais do que investimentos, cuidamos de histórias. Vamos trilhar juntos o caminho seguro para realizar os sonhos da sua família.
+            
+            <p class="font-light text-lg md:text-xl max-w-3xl mx-auto mb-10 text-gray-100 leading-relaxed">
+                Ajudo famílias a construírem segurança financeira, liberdade e um legado sólido através de alavancagem patrimonial validada.
             </p>
-            <a href="#sobre" class="inline-block border border-white text-white px-8 py-3 hover:bg-white hover:text-brand-black transition-all duration-300 tracking-widest text-sm uppercase">
-                Conheça Minha História
-            </a>
+            
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <a href="http://wa.me/556999206434?text=Ol%C3%A1%20Amanda%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito%20do%20meu%20patrim%C3%B4nio." target="_blank" class="inline-block bg-brand-gold text-brand-black px-8 py-4 hover:bg-white hover:text-brand-black transition-all duration-300 tracking-widest text-sm uppercase font-bold shadow-lg w-full md:w-auto">
+                    Agendar Diagnóstico Gratuito
+                </a>
+                <a href="#sobre" class="inline-block border border-white text-white px-8 py-4 hover:bg-white hover:text-brand-black transition-all duration-300 tracking-widest text-sm uppercase w-full md:w-auto">
+                    Conhecer Amanda
+                </a>
+            </div>
         </div>
 
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <i class="fas fa-chevron-down text-white text-xl"></i>
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-xl opacity-70"></i>
         </div>
     </header>
 
-    <!-- Scrolling Marquee (Fluid Effect) -->
-    <div class="py-6 bg-brand-black text-brand-cream border-y border-brand-gold/20 overflow-hidden">
+    <!-- Scrolling Marquee (Authority & Values) -->
+    <div class="py-5 bg-brand-black text-brand-cream border-y border-brand-gold/20 overflow-hidden relative z-20">
         <div class="marquee-container">
-            <div class="marquee-content font-serif text-2xl md:text-4xl italic px-4">
-                Confiança &nbsp; • &nbsp; Empatia &nbsp; • &nbsp; Realização &nbsp; • &nbsp; Família &nbsp; • &nbsp; Futuro &nbsp; • &nbsp; 
-                Confiança &nbsp; • &nbsp; Empatia &nbsp; • &nbsp; Realização &nbsp; • &nbsp; Família &nbsp; • &nbsp; Futuro &nbsp; • &nbsp;
-                Confiança &nbsp; • &nbsp; Empatia &nbsp; • &nbsp; Realização &nbsp; • &nbsp; Família &nbsp; • &nbsp; Futuro &nbsp; • &nbsp;
+            <div class="marquee-content font-serif text-xl md:text-3xl italic px-4 flex items-center gap-12 text-gray-300">
+                <span>Estratégia</span> <span>•</span> 
+                <span>Segurança</span> <span>•</span> 
+                <span>Rentabilidade</span> <span>•</span> 
+                <span>Legado Familiar</span> <span>•</span> 
+                <span>Atuação Global</span> <span>•</span>
+                <span>Estratégia</span> <span>•</span> 
+                <span>Segurança</span> <span>•</span> 
+                <span>Rentabilidade</span> <span>•</span> 
+                <span>Legado Familiar</span> <span>•</span> 
+                <span>Atuação Global</span>
             </div>
         </div>
     </div>
 
-    <!-- Sobre Amanda (About) -->
+    <!-- Sobre Amanda (About & Authority) -->
     <section id="sobre" class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             
             <!-- Imagem de Amanda -->
-            <div class="relative reveal h-[600px] w-full bg-gray-200 overflow-hidden group">
+            <div class="relative reveal h-[600px] w-full bg-gray-200 overflow-hidden group shadow-xl">
                 <img src="https://i.ibb.co/mrWW1bBC/amanda-sentada-2.jpg" 
-                     alt="Amanda Dalprá" 
+                     alt="Amanda Dalprá Especialista em Consórcios" 
                      class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale hover:grayscale-0">
                 
-                <div class="absolute bottom-0 left-0 bg-brand-cream p-6 m-6 max-w-xs shadow-lg">
-                    <p class="font-serif text-2xl italic text-brand-black">"Não é sobre vendas. É sobre realizar sonhos"</p>
+                <div class="absolute bottom-0 left-0 bg-brand-cream p-6 m-6 max-w-xs shadow-lg border-l-4 border-brand-gold">
+                    <p class="font-serif text-2xl italic text-brand-black leading-tight">"Não é sobre vendas. É sobre realizar sonhos."</p>
                 </div>
             </div>
 
-            <div class="reveal">
-                <span class="text-brand-gold tracking-widest text-sm uppercase font-bold">Muito Prazer</span>
-                <h2 class="font-serif text-4xl md:text-6xl mt-4 mb-8 text-brand-black leading-tight">Amanda Dalprá</h2>
+            <div class="reveal pt-4">
+                <span class="text-brand-gold tracking-widest text-sm uppercase font-bold flex items-center gap-2">
+                    <span class="w-8 h-[1px] bg-brand-gold inline-block"></span>
+                    Quem Sou
+                </span>
+                <h2 class="font-serif text-4xl md:text-5xl mt-4 mb-8 text-brand-black leading-tight">
+                    Amanda Dalprá
+                </h2>
                 
-                <div class="space-y-6 text-brand-gray text-sm md:text-base leading-relaxed text-justify">
+                <div class="space-y-6 text-brand-gray text-base leading-relaxed text-justify font-light">
                     <p>
                         Sou Amanda Dalprá, especialista em estruturação de patrimônio imobiliário e estratégias inteligentes de alavancagem financeira. Atuo no mercado financeiro com foco em planejamento patrimonial, consórcios e investimentos imobiliários de alta performance, ajudando pessoas e famílias a construírem patrimônio de forma estratégica, consciente e sustentável.
                     </p>
                     <p>
-                        Minha trajetória é marcada pela combinação entre visão analítica, disciplina e sensibilidade humana. Ao longo dos anos, desenvolvi um olhar apurado para identificar oportunidades reais de crescimento patrimonial, sempre respeitando o perfil, o momento de vida e os objetivos de cada cliente. Para mim, patrimônio não é apenas sobre números — é sobre segurança, liberdade e legado.
+                        Minha trajetória é marcada pela combinação entre visão analítica, disciplina e sensibilidade humana. Ao longo dos anos, desenvolvi um olhar apurado para identificar oportunidades reais de crescimento patrimonial, sempre respeitando o perfil, o momento de vida e os objetivos de cada cliente. Para mim, patrimônio não é apenas sobre números, é sobre segurança, liberdade e legado.
                     </p>
                     <p>
                         Atualmente, faço parte da <strong>Referência Capital</strong>, onde construí resultados expressivos e consolidei minha atuação como planejadora de patrimônio imobiliário, assessorando clientes no Brasil e no exterior. Minha experiência inclui a estruturação de projetos que envolvem consórcios, investimentos imobiliários voltados à geração de renda, diversificação patrimonial e proteção de capital no longo prazo.
@@ -187,70 +222,77 @@
                     </p>
                 </div>
 
-                <!-- Stats -->
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-8 border-t border-brand-black/10 pt-8 mt-8">
+                <!-- Authority Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8 border-t border-brand-black/10 pt-8 mt-10">
                     <div>
                         <h3 class="font-serif text-4xl text-brand-black">+10</h3>
-                        <p class="text-xs uppercase tracking-widest text-brand-gray mt-2">Anos de Histórias</p>
+                        <p class="text-xs uppercase tracking-widest text-brand-gold mt-2 font-bold">Anos de Resultados</p>
                     </div>
                     <div>
-                        <h3 class="font-serif text-4xl text-brand-black">Global</h3>
-                        <p class="text-xs uppercase tracking-widest text-brand-gray mt-2">Mais de 42 Países</p>
+                        <h3 class="font-serif text-4xl text-brand-black">42</h3>
+                        <p class="text-xs uppercase tracking-widest text-brand-gold mt-2 font-bold">Países Atendidos</p>
                     </div>
                     <div>
                         <h3 class="font-serif text-4xl text-brand-black">Inúmeros</h3>
-                        <p class="text-xs uppercase tracking-widest text-brand-gray mt-2">Sonhos Realizados</p>
+                        <p class="text-xs uppercase tracking-widest text-brand-gold mt-2 font-bold">Sonhos Realizados</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- O Consórcio (Educational) -->
+    <!-- O Consórcio (Services & Education) -->
     <section id="consorcio" class="bg-brand-black text-brand-cream py-24">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20 reveal">
-                <h2 class="font-serif text-4xl md:text-6xl mb-4">Entenda o Consórcio</h2>
-                <p class="text-brand-gray max-w-2xl mx-auto">Muitos acham complicado, mas é simples: é a união de pessoas com o mesmo objetivo para comprar bens sem pagar juros abusivos aos bancos.</p>
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-gold tracking-widest text-sm uppercase font-bold">Como Funciona</span>
+                <h2 class="font-serif text-4xl md:text-5xl mt-3 mb-4">Estratégias para seu Futuro</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto font-light">Uma ferramenta poderosa para quem planeja. Unimos segurança jurídica à inteligência financeira.</p>
             </div>
 
-            <!-- Ajustado para 4 colunas em telas grandes (lg:grid-cols-4) ou 2 colunas em médias (md:grid-cols-2) -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Card 1 -->
-                <div class="group reveal p-8 border border-white/10 hover:border-brand-gold transition-all duration-500 hover:-translate-y-2 bg-white/5">
+                <div class="group reveal p-8 border border-white/10 hover:border-brand-gold transition-all duration-500 hover:-translate-y-2 bg-white/5 flex flex-col">
                     <div class="text-brand-gold text-3xl mb-6"><i class="fas fa-piggy-bank"></i></div>
                     <h3 class="font-serif text-2xl mb-4">Poupança Inteligente</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
+                    <p class="text-gray-400 text-sm leading-relaxed flex-grow">
                         Imagine guardar dinheiro em grupo. Ao invés de esperar anos sozinho, o grupo disponibiliza o valor total mensalmente para os membros comprarem seus bens. É compra planejada, sem os juros compostos do financiamento.
                     </p>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="group reveal p-8 border border-white/10 hover:border-brand-gold transition-all duration-500 hover:-translate-y-2 bg-white/5">
+                <div class="group reveal p-8 border border-white/10 hover:border-brand-gold transition-all duration-500 hover:-translate-y-2 bg-white/5 flex flex-col">
                     <div class="text-brand-gold text-3xl mb-6"><i class="fas fa-tachometer-alt"></i></div>
                     <h3 class="font-serif text-2xl mb-4">Acelere com Lances</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
+                    <p class="text-gray-400 text-sm leading-relaxed flex-grow">
                         Não quer esperar o sorteio? Você pode "furar a fila" ofertando um lance, que funciona como um leilão. Minha consultoria calcula o valor ideal para aumentar suas chances de contemplação rápida.
                     </p>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="group reveal p-8 border border-white/10 hover:border-brand-gold transition-all duration-500 hover:-translate-y-2 bg-white/5">
+                <div class="group reveal p-8 border border-white/10 hover:border-brand-gold transition-all duration-500 hover:-translate-y-2 bg-white/5 flex flex-col">
                     <div class="text-brand-gold text-3xl mb-6"><i class="fas fa-chart-line"></i></div>
                     <h3 class="font-serif text-2xl mb-4">Dinheiro Trabalhando</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
+                    <p class="text-gray-400 text-sm leading-relaxed flex-grow">
                         Use o consórcio para investir: pague parcelas pequenas, seja contemplado, compre um imóvel e use o aluguel para pagar o restante. No final, você tem um patrimônio quitado que "se pagou sozinho".
                     </p>
                 </div>
 
-                <!-- Card 4 (NOVO - Lei do Consórcio) -->
-                <div class="group reveal p-8 border border-white/10 hover:border-brand-gold transition-all duration-500 hover:-translate-y-2 bg-white/5">
+                <!-- Card 4 -->
+                <div class="group reveal p-8 border border-white/10 hover:border-brand-gold transition-all duration-500 hover:-translate-y-2 bg-white/5 flex flex-col">
                     <div class="text-brand-gold text-3xl mb-6"><i class="fas fa-balance-scale"></i></div>
                     <h3 class="font-serif text-2xl mb-4">Garantia de Lei</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
+                    <p class="text-gray-400 text-sm leading-relaxed flex-grow">
                         Sua segurança é total. O sistema é fiscalizado pelo Banco Central e regido pela <strong>Lei do Consórcio (11.795)</strong>. Isso garante que seu dinheiro está protegido e a entrega do bem é um direito assegurado.
                     </p>
                 </div>
+            </div>
+
+            <!-- Strategic CTA -->
+            <div class="mt-16 text-center reveal">
+                <a href="http://wa.me/556999206434?text=Quero%20simular%20meu%20cen%C3%A1rio%20de%20investimento" target="_blank" class="inline-block bg-transparent border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-black px-10 py-3 uppercase tracking-widest font-bold transition-all duration-300">
+                    Descubra sua Estratégia Ideal
+                </a>
             </div>
         </div>
     </section>
@@ -258,35 +300,35 @@
     <!-- Diferencial Section -->
     <section id="diferencial" class="py-24 px-6 bg-brand-cream relative overflow-hidden">
         <!-- Elemento decorativo -->
-        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-gold/10 rounded-full blur-3xl"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-gold/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
 
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div class="reveal order-2 lg:order-1">
                 <span class="text-brand-gold tracking-widest text-sm uppercase font-bold">Por que escolher Amanda?</span>
                 <h2 class="font-serif text-4xl md:text-5xl mt-4 mb-8 text-brand-black">Uma Relação de Confiança</h2>
                 
-                <div class="space-y-8">
+                <div class="space-y-10">
                     <div class="flex items-start">
-                        <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center border border-brand-black rounded-full text-xl">1</div>
+                        <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-brand-black text-brand-gold rounded-full text-xl font-serif">1</div>
                         <div class="ml-6">
-                            <h4 class="font-serif text-xl font-bold mb-2">Conexão Real</h4>
-                            <p class="text-brand-gray text-sm">Antes de falar de negócios, quero ouvir sua história. Entender suas dores, seus desejos e o que é importante para sua família é o primeiro passo para construirmos algo valioso juntos.</p>
+                            <h4 class="font-serif text-xl font-bold mb-2 text-brand-black">Conexão Real</h4>
+                            <p class="text-brand-gray text-sm leading-relaxed">Antes de falar de negócios, quero ouvir sua história. Entender suas dores, seus desejos e o que é importante para sua família é o primeiro passo para construirmos algo valioso juntos.</p>
                         </div>
                     </div>
                     
                     <div class="flex items-start">
-                        <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center border border-brand-black rounded-full text-xl">2</div>
+                        <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-brand-black text-brand-gold rounded-full text-xl font-serif">2</div>
                         <div class="ml-6">
-                            <h4 class="font-serif text-xl font-bold mb-2">Cuidado Contínuo</h4>
-                            <p class="text-brand-gray text-sm">Nossa parceria não termina na assinatura. Estarei ao seu lado em cada etapa, vibrando com cada pequena vitória e cuidando de toda a burocracia até a chave estar na sua mão.</p>
+                            <h4 class="font-serif text-xl font-bold mb-2 text-brand-black">Cuidado Contínuo</h4>
+                            <p class="text-brand-gray text-sm leading-relaxed">Nossa parceria não termina na assinatura. Estarei ao seu lado em cada etapa, vibrando com cada pequena vitória e cuidando de toda a burocracia até a chave estar na sua mão.</p>
                         </div>
                     </div>
 
                     <div class="flex items-start">
-                        <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center border border-brand-black rounded-full text-xl">3</div>
+                        <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-brand-black text-brand-gold rounded-full text-xl font-serif">3</div>
                         <div class="ml-6">
-                            <h4 class="font-serif text-xl font-bold mb-2">Verdade e Clareza</h4>
-                            <p class="text-brand-gray text-sm">Um relacionamento duradouro se baseia na honestidade. Oriento com transparência total, olho no olho, para que você durma tranquilo sabendo que fez a melhor escolha.</p>
+                            <h4 class="font-serif text-xl font-bold mb-2 text-brand-black">Verdade e Clareza</h4>
+                            <p class="text-brand-gray text-sm leading-relaxed">Um relacionamento duradouro se baseia na honestidade. Oriento com transparência total, olho no olho, para que você durma tranquilo sabendo que fez a melhor escolha.</p>
                         </div>
                     </div>
                 </div>
@@ -296,66 +338,69 @@
             <div class="reveal order-1 lg:order-2 relative h-[500px] lg:h-[700px]">
                 <div class="absolute inset-4 border border-brand-black z-0"></div>
                 <img src="https://i.ibb.co/twNpJ8h1/amanda-vestido.jpg" 
-                     alt="Consultoria Executiva" 
-                     class="absolute inset-0 w-full h-full object-cover z-10 hover:scale-[1.02] transition-transform duration-700">
+                     alt="Consultoria Executiva Amanda Dalprá" 
+                     class="absolute inset-0 w-full h-full object-cover z-10 hover:scale-[1.01] transition-transform duration-700 shadow-xl">
             </div>
         </div>
     </section>
 
     <!-- Depoimentos (Avaliações) -->
-    <section id="depoimentos" class="py-20 bg-brand-cream border-t border-brand-black/5">
+    <section id="depoimentos" class="py-24 bg-white border-t border-brand-black/5">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <div class="reveal mb-12">
                 <span class="text-brand-gold tracking-widest text-sm uppercase font-bold">Reconhecimento</span>
-                <h2 class="font-serif text-4xl md:text-5xl mt-2 text-brand-black">O Carinho de Quem Confia</h2>
+                <h2 class="font-serif text-4xl md:text-5xl mt-2 text-brand-black mb-4">O Carinho de Quem Confia</h2>
+                <div class="flex justify-center gap-1 text-brand-gold text-sm mb-4">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
             </div>
 
-            <!-- Ajustado para 4 colunas em telas grandes e 2 em médias -->
+            <!-- Grid Depoimentos -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
                 <!-- Avaliação 1 -->
                 <div class="reveal group cursor-pointer" onclick="openModal('https://i.ibb.co/d8xN5Pf/Captura-de-tela-2026-01-07-203805.png')">
-                    <div class="relative overflow-hidden bg-white p-4 shadow-lg hover:shadow-2xl transition-all duration-300 transform group-hover:-translate-y-2">
-                        <div class="aspect-[9/16] overflow-hidden border border-brand-gray/20">
+                    <div class="relative overflow-hidden bg-f5f3ef p-4 shadow-md hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2 h-full border border-gray-100">
+                        <div class="aspect-[9/16] overflow-hidden border border-brand-gray/10 bg-gray-50">
                             <img src="https://i.ibb.co/d8xN5Pf/Captura-de-tela-2026-01-07-203805.png" alt="Depoimento Cliente 1" class="object-cover object-top w-full h-full opacity-90 group-hover:opacity-100 transition-opacity">
                         </div>
-                        <p class="mt-4 text-xs text-brand-gray tracking-widest uppercase flex items-center justify-center gap-2">
-                            <i class="fas fa-search-plus"></i> Ampliar
+                        <p class="mt-4 text-[10px] text-brand-gray tracking-widest uppercase flex items-center justify-center gap-2 font-semibold">
+                            <i class="fas fa-plus"></i> Ver Detalhes
                         </p>
                     </div>
                 </div>
 
                 <!-- Avaliação 2 -->
                 <div class="reveal group cursor-pointer" onclick="openModal('https://i.ibb.co/k27JPnK3/Captura-de-tela-2026-01-07-203927.png')">
-                    <div class="relative overflow-hidden bg-white p-4 shadow-lg hover:shadow-2xl transition-all duration-300 transform group-hover:-translate-y-2">
-                        <div class="aspect-[9/16] overflow-hidden border border-brand-gray/20">
+                    <div class="relative overflow-hidden bg-f5f3ef p-4 shadow-md hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2 h-full border border-gray-100">
+                        <div class="aspect-[9/16] overflow-hidden border border-brand-gray/10 bg-gray-50">
                             <img src="https://i.ibb.co/k27JPnK3/Captura-de-tela-2026-01-07-203927.png" alt="Depoimento Cliente 2" class="object-cover object-top w-full h-full opacity-90 group-hover:opacity-100 transition-opacity">
                         </div>
-                        <p class="mt-4 text-xs text-brand-gray tracking-widest uppercase flex items-center justify-center gap-2">
-                            <i class="fas fa-search-plus"></i> Ampliar
+                        <p class="mt-4 text-[10px] text-brand-gray tracking-widest uppercase flex items-center justify-center gap-2 font-semibold">
+                            <i class="fas fa-plus"></i> Ver Detalhes
                         </p>
                     </div>
                 </div>
 
                 <!-- Avaliação 3 -->
                 <div class="reveal group cursor-pointer" onclick="openModal('https://i.ibb.co/rR3sbSgT/print-silvia.jpg')">
-                    <div class="relative overflow-hidden bg-white p-4 shadow-lg hover:shadow-2xl transition-all duration-300 transform group-hover:-translate-y-2">
-                        <div class="aspect-[9/16] overflow-hidden border border-brand-gray/20">
+                    <div class="relative overflow-hidden bg-f5f3ef p-4 shadow-md hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2 h-full border border-gray-100">
+                        <div class="aspect-[9/16] overflow-hidden border border-brand-gray/10 bg-gray-50">
                             <img src="https://i.ibb.co/rR3sbSgT/print-silvia.jpg" alt="Depoimento Silvia" class="object-cover object-top w-full h-full opacity-90 group-hover:opacity-100 transition-opacity">
                         </div>
-                        <p class="mt-4 text-xs text-brand-gray tracking-widest uppercase flex items-center justify-center gap-2">
-                            <i class="fas fa-search-plus"></i> Ampliar
+                        <p class="mt-4 text-[10px] text-brand-gray tracking-widest uppercase flex items-center justify-center gap-2 font-semibold">
+                            <i class="fas fa-plus"></i> Ver Detalhes
                         </p>
                     </div>
                 </div>
 
-                <!-- Avaliação 4 (NOVO - Hichen) -->
+                <!-- Avaliação 4 -->
                 <div class="reveal group cursor-pointer" onclick="openModal('https://i.ibb.co/XfZyjqnR/hichen.jpg')">
-                    <div class="relative overflow-hidden bg-white p-4 shadow-lg hover:shadow-2xl transition-all duration-300 transform group-hover:-translate-y-2">
-                        <div class="aspect-[9/16] overflow-hidden border border-brand-gray/20">
+                    <div class="relative overflow-hidden bg-f5f3ef p-4 shadow-md hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2 h-full border border-gray-100">
+                        <div class="aspect-[9/16] overflow-hidden border border-brand-gray/10 bg-gray-50">
                             <img src="https://i.ibb.co/XfZyjqnR/hichen.jpg" alt="Depoimento Hichen" class="object-cover object-top w-full h-full opacity-90 group-hover:opacity-100 transition-opacity">
                         </div>
-                        <p class="mt-4 text-xs text-brand-gray tracking-widest uppercase flex items-center justify-center gap-2">
-                            <i class="fas fa-search-plus"></i> Ampliar
+                        <p class="mt-4 text-[10px] text-brand-gray tracking-widest uppercase flex items-center justify-center gap-2 font-semibold">
+                            <i class="fas fa-plus"></i> Ver Detalhes
                         </p>
                     </div>
                 </div>
@@ -364,39 +409,44 @@
     </section>
 
     <!-- Image Modal Overlay -->
-    <div id="imageModal" class="fixed inset-0 z-[60] bg-black/90 hidden flex items-center justify-center p-4 backdrop-blur-sm transition-opacity duration-300 opacity-0" onclick="closeModal()">
-        <button class="absolute top-6 right-6 text-white text-4xl hover:text-brand-gold focus:outline-none">&times;</button>
-        <img id="modalImage" src="" alt="Ampliado" class="max-w-full max-h-[90vh] rounded-sm shadow-2xl transform scale-95 transition-transform duration-300">
+    <div id="imageModal" class="fixed inset-0 z-[60] bg-black/95 hidden flex items-center justify-center p-4 backdrop-blur-md transition-opacity duration-300 opacity-0" onclick="closeModal()">
+        <button class="absolute top-6 right-6 text-white text-4xl hover:text-brand-gold focus:outline-none transition-transform hover:rotate-90">&times;</button>
+        <img id="modalImage" src="" alt="Ampliado" class="max-w-full max-h-[90vh] rounded shadow-2xl transform scale-95 transition-transform duration-300">
     </div>
 
     <!-- Call to Action / Footer Fluid -->
     <section id="contato" class="relative py-24 bg-brand-black text-white text-center overflow-hidden">
-        <div class="absolute inset-0 opacity-20"> <!-- Aumentei levemente a opacidade para destacar a foto -->
-             <img src="https://i.ibb.co/bRP99qmG/amanda-100-m.jpg" class="w-full h-full object-cover grayscale" style="object-position: center 20%;"> <!-- Imagem movida para o rodapé -->
+        <div class="absolute inset-0 opacity-20"> 
+             <img src="https://i.ibb.co/bRP99qmG/amanda-100-m.jpg" class="w-full h-full object-cover grayscale" style="object-position: center 20%;">
         </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/80 to-transparent"></div>
 
         <div class="relative z-10 max-w-4xl mx-auto px-6 reveal">
             <h2 class="font-serif text-5xl md:text-7xl mb-8">Vamos conversar sobre o seu futuro?</h2>
-            <p class="text-xl text-gray-300 mb-12 font-light">
+            <p class="text-xl text-gray-300 mb-12 font-light max-w-2xl mx-auto">
                 Quero ouvir você. Clique no botão abaixo para falarmos diretamente no WhatsApp, sem compromisso, sobre seus sonhos e como podemos realizá-los juntos.
             </p>
             
-            <div class="pt-6 text-center">
-                <a href="http://wa.me/556999206434?text=Ol%C3%A1%20Amanda%2C%20quero%20construir%20um%20futuro%20s%C3%B3lido%20e%20gostaria%20de%20saber%20mais%20sobre%20sua%20consultoria." target="_blank" class="inline-block bg-brand-gold text-brand-black px-10 py-4 uppercase tracking-widest font-bold hover:bg-white transition-colors duration-300 w-full md:w-auto">
+            <div class="pt-6 flex flex-col md:flex-row gap-6 justify-center items-center">
+                <a href="http://wa.me/556999206434?text=Ol%C3%A1%20Amanda%2C%20quero%20construir%20um%20futuro%20s%C3%B3lido%20e%20gostaria%20de%20saber%20mais%20sobre%20sua%20consultoria." target="_blank" class="bg-brand-gold text-brand-black px-10 py-4 uppercase tracking-widest font-bold hover:bg-white transition-colors duration-300 w-full md:w-auto shadow-lg hover:shadow-gold/50">
                     Quero um Atendimento Exclusivo
+                </a>
+                
+                <a href="http://wa.me/556999206434?text=Ol%C3%A1%20Amanda%2C%20gostaria%20de%20indicar%20uma%20pessoa%20para%20sua%20consultoria." target="_blank" class="border border-brand-gold text-brand-gold px-10 py-4 uppercase tracking-widest font-bold hover:bg-brand-gold hover:text-brand-black transition-colors duration-300 w-full md:w-auto">
+                    Quero Indicar Alguém
                 </a>
             </div>
 
-            <div class="mt-20 flex justify-center space-x-8 text-2xl text-gray-400">
-                <a href="https://www.instagram.com/souamandadalpra/" target="_blank" class="hover:text-brand-gold transition-colors"><i class="fab fa-instagram"></i></a>
-                <a href="http://wa.me/556999206434" target="_blank" class="hover:text-brand-gold transition-colors"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.linkedin.com/in/amanda-dalpr%C3%A1-280678a9/" target="_blank" class="hover:text-brand-gold transition-colors"><i class="fab fa-linkedin"></i></a>
+            <div class="mt-20 flex justify-center space-x-10 text-3xl text-gray-500">
+                <a href="https://www.instagram.com/souamandadalpra/" target="_blank" class="hover:text-brand-gold hover:-translate-y-1 transition-all"><i class="fab fa-instagram"></i></a>
+                <a href="http://wa.me/556999206434" target="_blank" class="hover:text-brand-gold hover:-translate-y-1 transition-all"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.linkedin.com/in/amanda-dalpr%C3%A1-280678a9/" target="_blank" class="hover:text-brand-gold hover:-translate-y-1 transition-all"><i class="fab fa-linkedin"></i></a>
             </div>
             
-            <p class="mt-12 text-xs text-gray-600 uppercase tracking-widest">
-                © 2026 Amanda Dalprá. Todos os direitos reservados. <br>
-                <span class="opacity-50 mt-2 block">Feito por GCRV PROJETOS</span>
-            </p>
+            <div class="mt-16 pt-8 border-t border-gray-800 text-xs text-gray-600 uppercase tracking-widest leading-loose">
+                <p>© 2026 Amanda Dalprá. Todos os direitos reservados.</p>
+                <p class="opacity-50 mt-2">Feito com excelência por GCRV PROJETOS</p>
+            </div>
         </div>
     </section>
 
@@ -459,6 +509,8 @@
         // Mobile Menu Toggle
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
+            const icon = document.querySelector('.fa-bars');
+            
             if (menu.classList.contains('translate-x-full')) {
                 menu.classList.remove('translate-x-full');
             } else {
@@ -470,9 +522,13 @@
         window.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
-                navbar.classList.add('shadow-sm');
+                navbar.classList.add('shadow-md');
+                navbar.classList.add('bg-brand-cream');
+                navbar.classList.remove('bg-brand-cream/95');
             } else {
-                navbar.classList.remove('shadow-sm');
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('bg-brand-cream/95');
+                navbar.classList.remove('bg-brand-cream');
             }
         });
     </script>
